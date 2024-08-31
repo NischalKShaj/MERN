@@ -151,3 +151,20 @@ console.log("amount per kg", newObject); // allows modification to existing prop
 // <------------------------>
 
 // Allow to get the internal prototype details of the object
+console.log("prototype of the object fruit", Object.getPrototypeOf(fruit));
+
+// 10. Object.setPrototypeOf
+// <------------------------>
+
+// allow to set the prototype one object to another
+
+let dog = {};
+Object.setPrototypeOf(dog, fruit);
+console.log("dog", dog.name);
+
+// 11. Object.is
+// <------------>
+
+// it checks whether the values are same
+console.log("check", Object.is("foo", "foo")); // returns true
+console.log("check", Object.is({}, {})); // returns false
