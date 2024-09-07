@@ -8,95 +8,71 @@ const UseStateHook = () => {
   const [count, setCount] = useState(0);
 
   const increment = () => {
-    setCount((prevCount) => prevCount + 1);
+    setCount((prev) => prev + 1);
   };
 
   const decrement = () => {
-    setCount((prevCount) => prevCount - 1);
+    setCount((prev) => prev - 1);
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen">
-      <button
-        onClick={increment}
-        className="mx-2 p-2 bg-blue-500 text-white rounded"
-      >
-        +
-      </button>
-      <p className="mx-4 text-xl">{count}</p>
-      <button
-        onClick={decrement}
-        className="mx-2 p-2 bg-red-500 text-white rounded"
-      >
-        -
-      </button>
+    <div>
+      <button onClick={increment}>+</button>
+      <p>{count}</p>
+      <button onClick={decrement}>-</button>
     </div>
   );
 };
 
 export default UseStateHook;
 
-// creating a todo for adding the task in a todo
-interface TODO {
+interface List {
   id: number;
   task: string;
   description: string;
 }
 
 export const Todo = () => {
-  const [tasks, setTasks] = useState<TODO[]>([]);
+  const [tasks, setTasks] = useState<List[]>([]);
+
   const [task, setTask] = useState("");
+
   const [description, setDescription] = useState("");
 
   const changeInput = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
-    const { name, value } = e.target;
-    if (name === "task") {
+    const { id, value } = e.target;
+    if (id === "task") {
       setTask(value);
-    } else if (name === "description") {
+    } else if (id === "description") {
       setDescription(value);
     }
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-
-    const newTask: TODO = {
-      id: Date.now() + Math.random(),
+    const newTask: List = {
+      id: Math.random() + Date.now(),
       task: task,
       description: description,
     };
-
     setTasks([...tasks, newTask]);
+
     setTask("");
     setDescription("");
   };
 
   return (
-    <div className="bg-amber-500">
-      <form onSubmit={handleSubmit}>
-        <div className="mt-52 flex flex-col justify-center items-center">
-          <input
-            className="bg-slate-500 outline-dashed text-white"
-            type="text"
-            onChange={changeInput}
-            id="task"
-            value={task}
-            name="task"
-            required
-          />
-          <textarea
-            onChange={changeInput}
-            value={description}
-            name="description"
-            id="description"
-            required
-          />
-          <button type="submit">submit</button>
-        </div>
-      </form>
-
+    <div>
+      <input type="text" id="task" value={task} onChange={changeInput} />
+      <textarea
+        name="description"
+        value={description}
+        onChange={changeInput}
+        id="description"
+      />
+      <button onClick={handleSubmit}>submit</button>
       {tasks.map((task) => (
         <div key={task.id}>
           <p>{task.task}</p>
