@@ -71,7 +71,7 @@ Object.assign(user, company, location);
 console.log("user", user);
 // Note: cloning with Object.assign creates a shallow copy (pass by reference)
 
-//  2. structuredObject
+//  2. structuredClone
 // <------------------>
 // deep clone using structuredObject for nested objects (pass by value)
 let department = {
