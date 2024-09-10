@@ -1,14 +1,15 @@
-// <================== file to show case the button for the counter ========================>
+// <================= file to show the context for the counter ===========>
 
-// importing the required modules
 import { useContext } from "react";
-import { counterContext } from "./context/counterContext";
+import { counterContext } from "../context/counterContext";
 
 const CounterContext = () => {
-  const { count } = useContext(counterContext);
+  const { count, increment, decrement } = useContext(counterContext);
   return (
     <div>
+      <button onClick={increment}>increment</button>
       <p>{count}</p>
+      <button onClick={decrement}>decrement</button>
     </div>
   );
 };

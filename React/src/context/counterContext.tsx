@@ -1,6 +1,5 @@
-// <==================== file to create the counter context ================>
+// <============================== file to demonstrate the context ==================>
 
-// importing the required modules
 import { createContext } from "react";
 
 interface State {

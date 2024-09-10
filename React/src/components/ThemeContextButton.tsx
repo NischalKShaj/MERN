@@ -1,14 +1,13 @@
-// <================== file to show case the button for the counter ========================>
+// <============================= file to show the button for the theme context ===========>
 
-// importing the required modules
-import { useContext } from "react";
-import { ThemeContext } from "./context/themeContext";
+import React, { useContext } from "react";
+import { themeContext } from "../context/themeContext";
 
 const ThemeContextButton = () => {
-  const { toggle } = useContext(ThemeContext);
+  const { toggle } = useContext(themeContext);
   return (
     <div>
-      <button onClick={toggle}>change theme</button>
+      <button onClick={toggle}>change</button>
     </div>
   );
 };
