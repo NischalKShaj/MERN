@@ -8,12 +8,11 @@
 // import ThemeContext from "./components/ThemeContext";
 // import ThemeContextButton from "./components/ThemeContextButton";
 // import PropsPass from "./components/PropsPass";
-
-import { ErrorBoundary } from "react-error-boundary";
-import FallbackComponent from "./components/FallbackComponent";
-import BugComponent from "./components/BugComponent";
-
+// import { ErrorBoundary } from "react-error-boundary";
+// import FallbackComponent from "./components/FallbackComponent";
+// import BugComponent from "./components/BugComponent";
 // import DropDown from "./components/DropDown";
+import Timer from "./components/Timer";
 
 const App = () => {
   return (
@@ -22,9 +21,10 @@ const App = () => {
         <ThemeContext />
         <ThemeContextButton />
       </themeContext.Provider> */}
-      <ErrorBoundary FallbackComponent={FallbackComponent}>
+      {/* <ErrorBoundary FallbackComponent={FallbackComponent}>
         <BugComponent />
-      </ErrorBoundary>
+      </ErrorBoundary> */}
+      <Timer />
     </div>
   );
 };
