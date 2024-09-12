@@ -1,6 +1,6 @@
 // <=================== file to show how the use effect work ===================>
 
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 const UseEffect = () => {
   const [count, setCount] = useState(0);
