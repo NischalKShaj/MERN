@@ -12,7 +12,8 @@
 // import FallbackComponent from "./components/FallbackComponent";
 // import BugComponent from "./components/BugComponent";
 // import DropDown from "./components/DropDown";
-import Timer from "./components/Timer";
+// import Timer from "./components/Timer";
+import CountUseReducer from "./components/CountUseReducer";
 
 const App = () => {
   return (
@@ -24,7 +25,8 @@ const App = () => {
       {/* <ErrorBoundary FallbackComponent={FallbackComponent}>
         <BugComponent />
       </ErrorBoundary> */}
-      <Timer />
+      <CountUseReducer />
+      {/* <Timer /> */}
     </div>
   );
 };
