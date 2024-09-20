@@ -13,7 +13,8 @@
 // import BugComponent from "./components/BugComponent";
 // import DropDown from "./components/DropDown";
 // import Timer from "./components/Timer";
-import CountUseReducer from "./components/CountUseReducer";
+// import CountUseReducer from "./components/CountUseReducer";
+import DropDownState from "./components/DropDownState";
 
 const App = () => {
   return (
@@ -25,8 +26,7 @@ const App = () => {
       {/* <ErrorBoundary FallbackComponent={FallbackComponent}>
         <BugComponent />
       </ErrorBoundary> */}
-      <CountUseReducer />
-      {/* <Timer /> */}
+      <DropDownState />
     </div>
   );
 };
