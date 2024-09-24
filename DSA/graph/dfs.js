@@ -4,35 +4,37 @@ class Graph {
   constructor() {
     this.vertices = new Map();
   }
-  addValue(data) {
+  // for adding the vertices
+  addVertices(data) {
     if (!this.vertices.has(data)) {
       this.vertices.set(data, []);
     }
   }
+  // for inserting the vertex and edge
   insert(vertex, edge, isBidirectional = true) {
-    if (!this.vertices.has(vertex)) {
-      this.addValue(vertex);
-    }
-    if (!this.vertices.has(edge)) {
-      this.addValue(edge);
-    }
+    if (!this.vertices.has(vertex)) this.addVertices(vertex);
+
+    if (!this.vertices.has(edge)) this.addVertices(edge);
+
     this.vertices.get(vertex).push(edge);
-    if (isBidirectional) {
-      this.vertices.get(edge).push(vertex);
-    }
+
+    if (isBidirectional) this.vertices.get(edge).push(vertex);
   }
+  // for displaying the graph
   display() {
     let res = "";
     for (let [vertex, neighbor] of this.vertices) {
-      res += `${vertex}: ${neighbor.join(", ")}\n`;
+      res += `${vertex}:${neighbor.join(", ")}\n`;
     }
     return res;
   }
+  // for getting the start index
   start(startIndex) {
     const visited = new Set();
-    this.dfs(startIndex, visited);
+    this.dfs(visited, startIndex);
   }
-  dfs(startIndex, visited) {
+  // for performing dfs
+  dfs(visited, startIndex) {
     const stack = [startIndex];
     visited.add(startIndex);
     while (stack.length > 0) {
@@ -49,8 +51,8 @@ class Graph {
 }
 
 const graph = new Graph();
-graph.insert(3, 5, true);
 graph.insert(3, 4, true);
-graph.insert(5, 6, false);
+graph.insert(4, 6, true);
+graph.insert(6, 5, false);
 console.log(graph.display());
-graph.start(5);
+graph.start(4);
