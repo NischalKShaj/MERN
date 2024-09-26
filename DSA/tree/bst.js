@@ -14,7 +14,7 @@ class BST {
   }
   insert(value) {
     const node = new Node(value);
-    if (this.root == null) {
+    if (this.root === null) {
       this.root = node;
       return;
     }
@@ -61,29 +61,26 @@ class BST {
 }
 
 const bst = new BST();
-bst.insert(1);
-bst.insert(2);
-bst.insert(3);
-bst.insert(4);
 bst.insert(5);
-bst.insert(16);
-let result = [];
-// in-order
+bst.insert(3);
+bst.insert(8);
+bst.insert(1);
+bst.insert(7);
+
+const inOrder = [];
 bst.in_order(bst.root, (value) => {
-  result.push(value);
+  inOrder.push(value);
 });
-console.log(result);
+console.log(inOrder);
 
-let res1 = [];
-// pre-order
+const preOrder = [];
 bst.pre_order(bst.root, (value) => {
-  res1.push(value);
+  preOrder.push(value);
 });
-console.log(res1);
+console.log(preOrder);
 
-let res2 = [];
-// post-order
+const postOrder = [];
 bst.post_order(bst.root, (value) => {
-  res2.push(value);
+  postOrder.push(value);
 });
-console.log(res2);
+console.log(postOrder);
