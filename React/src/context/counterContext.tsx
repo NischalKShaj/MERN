@@ -2,13 +2,13 @@
 
 import { createContext } from "react";
 
-interface State {
+interface Counter {
   count: number;
   increment: () => void;
   decrement: () => void;
 }
 
-export const counterContext = createContext<State>({
+export const counterContext = createContext<Counter>({
   count: 0,
   increment: () => {},
   decrement: () => {},

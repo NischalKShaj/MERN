@@ -14,19 +14,26 @@
 // import DropDown from "./components/DropDown";
 // import Timer from "./components/Timer";
 // import CountUseReducer from "./components/CountUseReducer";
-import DropDownState from "./components/DropDownState";
+// import DropDownState from "./components/DropDownState";
+// import Ref from "./components/Ref";
+// import UseCallback from "./components/UseCallback";
+// import UseMemo from "./components/UseMemo";
+// import LazyWorking from "./components/LazyWorking";
+// import ReactMemo from "./components/ReactMemo";
+// import CounterRedux from "./components/CounterRedux";
+// import ThemeRedux from "./components/ThemeRedux";
+import TodoRedux from "./components/TodoRedux";
 
 const App = () => {
   return (
     <div className="flex  justify-center items-center">
-      {/* <themeContext.Provider value={{ theme, toggle }}>
-        <ThemeContext />
-        <ThemeContextButton />
-      </themeContext.Provider> */}
+      {/* <counterContext.Provider value={{ count, increment, decrement }}>
+        <CounterContext />
+      </counterContext.Provider> */}
       {/* <ErrorBoundary FallbackComponent={FallbackComponent}>
         <BugComponent />
       </ErrorBoundary> */}
-      <DropDownState />
+      <TodoRedux />
     </div>
   );
 };

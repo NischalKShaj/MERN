@@ -1,12 +1,11 @@
 // <============================== file to demonstrate the useReducer ======================>
 
 // importing the required modules
-import React, { useReducer } from "react";
+import { useReducer } from "react";
 
 interface State {
   count: number;
 }
-
 const initialState: State = { count: 0 };
 
 type Action = { type: "increment" } | { type: "decrement" };
@@ -17,9 +16,8 @@ const reducer = (state: State, action: Action) => {
       return { count: state.count + 1 };
     case "decrement":
       return { count: state.count - 1 };
-
     default:
-      return state;
+      return { count: state.count };
   }
 };
 

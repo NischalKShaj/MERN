@@ -1,12 +1,15 @@
 // <===================== component that create the bug =================>
 
 const BugComponent = () => {
-  const somethingswrong = true;
-
-  if (somethingswrong) {
-    throw new Error("new error found");
+  const flag = true;
+  if (flag) {
+    throw new Error("error found");
   }
-  return <div>no bug found</div>;
+  return (
+    <div>
+      <p>No bugs found</p>
+    </div>
+  );
 };
 
 export default BugComponent;

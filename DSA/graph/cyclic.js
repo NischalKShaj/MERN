@@ -46,9 +46,9 @@ class Graph {
       if (!visited.has(neighbor)) {
         if (this.helper(neighbor, visited, vertex)) {
           return true;
-        } else if (neighbor !== parent) {
-          return true;
         }
+      } else if (neighbor !== parent) {
+        return true;
       }
     }
     return false;
