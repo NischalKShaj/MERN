@@ -2,6 +2,11 @@
 
 // reduce for finding the largest
 const arr = [4, 52, 6, 2, 5, 7, 8];
+const matrix = [
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9],
+];
 
 const largest = arr.reduce((acc, value) => {
   return acc > value ? acc : value;
@@ -54,3 +59,10 @@ const sum = arr.reduce((acc, val) => {
 }, 0);
 
 console.log(sum);
+
+// using reduce to flat an array
+const multi = matrix.reduce((acc, val) => {
+  return acc.concat(val);
+}, []);
+
+console.log(multi);
