@@ -314,3 +314,40 @@ const sortSum = (arr) => {
 
 const res15 = sortSum(multiObj1);
 console.log(res15);
+
+//  Sum Only Even Values in Nested Arrays
+const evenSum = (arr) => {
+  let nested = [];
+  let sum = 0;
+  for (let i = 0; i < arr.length; i++) {
+    nested = arr[i].ab;
+    for (let j = 0; j < nested.length; j++) {
+      if (nested[j] % 2 === 0) {
+        sum += nested[j];
+        console.log(nested[j], sum);
+      }
+    }
+  }
+  return sum;
+};
+
+const res16 = evenSum(multiObj1);
+console.log(res16);
+
+// Filter Objects Based on Maximum Value
+const filterMax = (arr, threshold = 50) => {
+  return (filteredData = arr.filter((obj) => Math.max(...obj.ab) > threshold));
+};
+
+const res17 = filterMax(multiObj1);
+console.log(res17);
+
+//  Multiply All Values by a Given Number
+const multiply = (arr, multiplier = 2) => {
+  return arr.map((obj) => {
+    return { ab: obj.ab.map((val) => val * multiplier) };
+  });
+};
+
+const res18 = multiply(multiObj);
+console.log(res18);
