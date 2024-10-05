@@ -7,6 +7,7 @@ const matrix = [
   [4, 5, 6],
   [7, 8, 9],
 ];
+const fruits = ["apple", "banana", "apple", "orange", "banana", "apple"];
 
 const largest = arr.reduce((acc, value) => {
   return acc > value ? acc : value;
@@ -66,3 +67,11 @@ const multi = matrix.reduce((acc, val) => {
 }, []);
 
 console.log(multi);
+
+// for finding the occurrence of each value
+const occurrence = fruits.reduce((acc, val) => {
+  acc[val] = (acc[val] || 0) + 1;
+  return acc;
+}, {});
+
+console.log(occurrence);
