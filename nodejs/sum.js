@@ -22,6 +22,19 @@ app.get("/sum", (req, res) => {
   res.send(`sum of ${num1} and ${num2} is ${sum}`);
 });
 
+// using middleware
+const sum = (req, res, next) => {
+  const value = Number(req.params.num1);
+  const value2 = Number(req.params.num2);
+  const result = value + value2;
+  app.locals.sum = result;
+  next();
+};
+
+app.get("/add/:num1/:num2", sum, (req, res) => {
+  res.send(`${app.locals.sum}`);
+});
+
 const port = 4000;
 app.listen(port, () => {
   console.log(`http://localhost:${port}`);

@@ -23,8 +23,12 @@ class Trie {
     node.children.set("*", new Node());
   }
   // for finding the longest prefix
-  longestPrefix() {
-    return this.helper(this.root, "");
+  longestPrefix(letter) {
+    let node = this.root;
+    if (!node.children.has(letter)) {
+      return null;
+    }
+    return letter + this.helper(node.children.get(letter), "");
   }
   helper(node, prefix) {
     if (node.children.size === 0) {
@@ -63,4 +67,4 @@ trie.insert("app");
 trie.insert("ant");
 trie.insert("banana");
 console.log(trie.display());
-console.log("trie.longestPrefix()", trie.longestPrefix());
+console.log("trie.longestPrefix()", trie.longestPrefix("a"));
