@@ -1,4 +1,4 @@
-// <============================ file to show one example of hash table ===========>
+// <============================ file to show one example of hash table return most occurring letter ===========>
 
 const countLetter = (str) => {
   const count = {};
